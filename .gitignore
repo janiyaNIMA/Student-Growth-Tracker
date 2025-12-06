@@ -1,0 +1,71 @@
+# Ignore environment files and virtual environments
+.env
+.env.*
+.venv/
+venv/
+env/
+ENV/
+
+# Python caches and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Test / coverage
+.tox/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Static maps and build artifacts
+*.map
+
+# Ignore local secrets file patterns
+/.env
+.env.local
+.env.development
+.env.production
+
+# -----------------------------
+# Frontend-specific ignores
+# -----------------------------
+# If you have a separate frontend app, ignore its node_modules and env files
+frontend/node_modules/
+frontend/.env
+frontend/.env.*
+frontend/.parcel-cache/
+frontend/dist/
+frontend/build/
+
+# -----------------------------
+# Backend-specific ignores
+# -----------------------------
+backend/.env
+backend/.env.*
+backend/venv/
+backend/.venv/
+backend/env/
+backend/__pycache__/
+backend/*.py[cod]
+backend/*.egg-info/
