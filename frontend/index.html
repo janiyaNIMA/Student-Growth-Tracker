@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Student Growth Tracker{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<div class="welcome-field">
+		<h1 class="hero">WELCOME</h1>
+	</div>
+
+	<div class="data-grid">
+	<section class="data-entry-field">
+		<h2>Data Entry</h2>
+		<form method="post" action="/" class="data-form">
+			<div class="form-inline">
+				<label for="index_number">Index Number</label>
+				<input id="index_number" name="index_number" type="number" required />
+				<label for="marks">Marks</label>
+				<input id="marks" name="marks" type="number" required />
+				<button type="submit">Submit</button>
+			</div>
+		</form>
+	</section>
+
+	</section>
+
+	<section class="show-data-field">
+		<h2>Show Data</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Index Number</th>
+					<th>Student Name</th>
+					<th>Marks</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% if students %}
+					{% for s in students %}
+						<tr>
+							<td>{{ s.index or s.index_number }}</td>
+							<td>{{ s.name }}</td>
+							<td>{{ s.marks }}</td>
+						</tr>
+					{% endfor %}
+				{% else %}
+					<tr>
+						<td colspan="3">No records yet.</td>
+					</tr>
+				{% endif %}
+			</tbody>
+		</table>
+		<p class="note">[student name was fetched from database]</p>
+	</section>
+	</div>
+</div>
+
+{% endblock %}
