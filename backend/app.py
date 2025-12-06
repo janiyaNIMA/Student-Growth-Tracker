@@ -7,7 +7,8 @@ HERE = os.path.dirname(__file__)
 template_dir = os.path.abspath(os.path.join(HERE, '..', 'frontend'))
 static_dir = os.path.abspath(os.path.join(HERE, '..', 'frontend', 'static'))
 
-app.con
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
 
